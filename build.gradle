@@ -1,28 +1,35 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.3.RELEASE'
+		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
 	}
 	repositories {
 		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'org.springframework.boot'
 
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
+	version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = 1.8
 
-repositories {
-	mavenCentral()
-}
+	repositories {
+		repositories {
+			mavenCentral()
+			maven { url "https://repo.spring.io/snapshot" }
+			maven { url "https://repo.spring.io/milestone" }
+		}
+	}
 
-
-dependencies {
-	compile('org.springframework.boot:spring-boot-starter')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	dependencies {
+		compile("org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}")
+		testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+	}
 }
