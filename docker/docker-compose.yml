@@ -30,6 +30,13 @@ services:
     ports:
       - "2222:2222"
 
+  ml-order:
+    container_name: ml-order
+    image: alaxat/ml-order
+    restart: always
+    ports:
+      - "3333:2222"
+
   ml-zipkin:
     container_name: ml-zipkin
     image: alaxat/ml-zipkin
