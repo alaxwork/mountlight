@@ -2,8 +2,8 @@ server:
   port: ${PORT:2222}
 
 spring:
-  application:
-    name: account-service
+#  application:
+#    name: account-service
 
   zipkin:
     base-url: http://ml-zipkin:9411

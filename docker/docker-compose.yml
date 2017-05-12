@@ -37,6 +37,13 @@ services:
     ports:
       - "3333:2222"
 
+  ml-discovery:
+    container_name: ml-discovery
+    image: alaxat/ml-discovery
+    restart: always
+    ports:
+      - "8761:8761"
+
   ml-zipkin:
     container_name: ml-zipkin
     image: alaxat/ml-zipkin

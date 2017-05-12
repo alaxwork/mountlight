@@ -13,7 +13,7 @@ public class OrderController {
 
     @RequestMapping("/order")
     Order getInfo() {
-        logger.info("GET INFO");
-        return new Order().setName("test user");
+        logger.info("GET ORDER");
+        return new Order().setName("some order");
     }
 }
