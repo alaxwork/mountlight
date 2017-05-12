@@ -1,1 +1,1 @@
-include 'ml-service'
+include 'ml-service', 'ml-discovery', 'ml-zipkin'

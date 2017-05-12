@@ -1,0 +1,38 @@
+version: '2.0'
+
+services:
+  elasticsearch:
+    container_name: elasticsearch
+    image: elasticsearch
+    restart: always
+    ports:
+      - "9200:9200"
+
+  kibana:
+    container_name: kibana
+    image: kibana
+    restart: always
+    ports:
+      - "5601:5601"
+
+  logstash:
+    container_name: logstash
+    image: logstash
+    command: logstash -e 'input { tcp { port => 5000 codec => "json" } } output { elasticsearch { hosts => ["elasticsearch:9200"] index => "micro-%{serviceName}"} }'
+    restart: always
+    ports:
+      - "5000:5000"
+
+  ml-service:
+    container_name: ml-service
+    image: alaxat/ml-service
+    restart: always
+    ports:
+      - "2222:2222"
+
+  ml-zipkin:
+    container_name: ml-zipkin
+    image: alaxat/ml-zipkin
+    restart: always
+    ports:
+      - "9411:9411"

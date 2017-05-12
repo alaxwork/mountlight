@@ -1,4 +1,4 @@
-package com.alaxat;
+package com.alaxat.mountlight;
 
 
 import org.springframework.boot.SpringApplication;
