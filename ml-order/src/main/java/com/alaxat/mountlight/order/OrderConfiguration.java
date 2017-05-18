@@ -6,12 +6,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("com.alaxat.mountlight")
-public class AccountConfiguration {
+@ComponentScan("com.alaxat.mountlight.order")
+public class OrderConfiguration {
 
 	@Bean
     public AlwaysSampler defaultSampler() {
 	  return new AlwaysSampler();
 	}
-	
 }

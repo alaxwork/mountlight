@@ -1,4 +1,4 @@
-package com.alaxat.mountlight.order;
+package com.alaxat.mountlight.order.dto;
 
 public class Order {
 
