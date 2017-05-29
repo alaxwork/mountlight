@@ -1,10 +1,7 @@
 dependencies {
-    compile group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '4.9'
-    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
-    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-sleuth', version: '1.2.0.RELEASE'
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-sleuth-zipkin', version: '1.2.0.RELEASE'
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka', version: '1.2.0.RELEASE'
+    compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
 
-    compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
+    compile "org.springframework.cloud:spring-cloud-starter-sleuth:${springCloudVersion}"
+    compile "org.springframework.cloud:spring-cloud-sleuth-zipkin:${springCloudVersion}"
+    compile "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
 }

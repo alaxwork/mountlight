@@ -1,6 +1,10 @@
 buildscript {
 	ext {
 		springBootVersion = '1.5.3.RELEASE'
+		springCloudVersion = '1.2.0.RELEASE'
+		logbackVersion = '1.2.3'
+		logstashVersion = '4.9'
+		zipkinVersion = '1.18.0'
 	}
 	repositories {
 		mavenCentral()
@@ -29,6 +33,10 @@ subprojects {
 	}
 
 	dependencies {
+		compile "ch.qos.logback:logback-classic:${logbackVersion}"
+		compile "ch.qos.logback:logback-core:${logbackVersion}"
+		compile "net.logstash.logback:logstash-logback-encoder:${logstashVersion}"
+
 //		compile("org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}")
 //		testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 	}
