@@ -1,1 +1,1 @@
-include 'ml-service', 'ml-order', 'ml-discovery', 'ml-zipkin'
+include 'ml-customer', 'ml-order', 'ml-discovery', 'ml-zipkin'

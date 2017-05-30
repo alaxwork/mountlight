@@ -22,7 +22,7 @@
                 <pattern>
                     <pattern>
                         {
-                        "serviceName": "ml-service"
+                        "serviceName": "ml-customer"
                         }
                     </pattern>
                 </pattern>

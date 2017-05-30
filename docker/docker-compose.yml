@@ -23,9 +23,9 @@ services:
     ports:
       - "5000:5000"
 
-  ml-service:
-    container_name: ml-service
-    image: alaxat/ml-service
+  ml-customer:
+    container_name: ml-customer
+    image: alaxat/ml-customer
     restart: always
     ports:
       - "2222:2222"
