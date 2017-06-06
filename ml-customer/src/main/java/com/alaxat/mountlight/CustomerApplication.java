@@ -9,9 +9,9 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-public class MountlightApplication {
+public class CustomerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MountlightApplication.class, args);
+		SpringApplication.run(CustomerApplication.class, args);
 	}
 }

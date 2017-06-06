@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+    <springProfile name="dev">
+        <property name="LOGSTASH_DEST" value="logstash:5000"/>
+    </springProfile>
+</included>

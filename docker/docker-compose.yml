@@ -22,20 +22,21 @@ services:
     restart: always
     ports:
       - "5000:5000"
-#
-#  ml-customer:
-#    container_name: ml-customer
-#    image: alaxat/ml-customer
-#    restart: always
-#    ports:
-#      - "2222:2222"
+
+  ml-customer:
+    container_name: ml-customer
+    image: alaxat/ml-customer
+    restart: always
+    ports:
+      - "3002:2222"
 
   ml-order:
+    hostname: ml-order
     container_name: ml-order
     image: alaxat/ml-order
     restart: always
     ports:
-      - "3333:2222"
+      - "3001:3001"
 
   ml-discovery:
     container_name: ml-discovery

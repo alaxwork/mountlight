@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <include resource="logback-spring-default.xml" />
+    <include resource="logback-spring-dev.xml" />
+
+    <property resource="bootstrap.yml"/>
+    <springProperty scope="context" name="application-name" source="spring.application.name" defaultValue=""/>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -8,10 +13,9 @@
     </appender>
 
     <appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <destination>logstash:5000</destination>
+        <destination>${LOGSTASH_DEST}</destination>
 
-        <encoder
-                class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <mdc /> <!-- MDC variables on the Thread will be written as JSON fields -->
                 <context /> <!--Outputs entries from logback's context -->
@@ -21,9 +25,7 @@
 
                 <pattern>
                     <pattern>
-                        {
-                        "serviceName": "ml-customer"
-                        }
+                        { "serviceName": "${application-name}" }
                     </pattern>
                 </pattern>
 
