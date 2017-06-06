@@ -1,0 +1,9 @@
+spring:
+  zipkin:
+    base-url: http://ml-zipkin:9411
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://ml-discovery:8761}/eureka/
+

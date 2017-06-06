@@ -3,7 +3,7 @@ server:
 
 spring:
 #  application:
-#    name: account-service
+#    name: account-account
 
   zipkin:
     base-url: http://ml-zipkin:9411
