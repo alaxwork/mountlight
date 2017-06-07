@@ -30,6 +30,15 @@ services:
     ports:
       - "3002:2222"
 
+  ml-order-postgres:
+    container_name: ml-order-postgres
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=XOzaMGE68L5t
+
   ml-order:
     hostname: ml-order
     container_name: ml-order
