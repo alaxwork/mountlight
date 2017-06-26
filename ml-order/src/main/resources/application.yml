@@ -2,6 +2,15 @@ server:
   port: ${PORT:3001}
 
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/docker
+    username: docker
+    password: XOzaMGE68L5t
+    platform: POSTGRESQL
+  jpa:
+    show-sql: true
+#    hibernate:
+#      ddl-auto: create
   zipkin:
     base-url: http://localhost:9411
 

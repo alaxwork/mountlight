@@ -1,8 +1,14 @@
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+    compile "org.postgresql:postgresql:9.4-1206-jdbc42"
+//    compile "org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}"
 
     compile "org.springframework.cloud:spring-cloud-starter-sleuth:${springCloudVersion}"
     compile "org.springframework.cloud:spring-cloud-sleuth-zipkin:${springCloudVersion}"
     compile "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
+
+    compile "org.mapstruct:mapstruct:$mapStructVersion"
+
+    apt "org.mapstruct:mapstruct-processor:$mapStructVersion"
 }

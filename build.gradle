@@ -1,27 +1,30 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.3.RELEASE'
+		springBootVersion = '1.5.3.RELEASE' // '2.0.0.M2'
 		springCloudVersion = '1.2.1.RELEASE'
 		logbackVersion = '1.2.3'
 		logstashVersion = '4.9'
 		zipkinVersion = '1.18.0'
 		spockVersion = '1.1-groovy-2.4'
+        mapStructVersion = '1.1.0.Final'
 	}
 	repositories {
 		mavenCentral()
 		maven { url "https://repo.spring.io/snapshot" }
 		maven { url "https://repo.spring.io/milestone" }
+		maven { url "https://plugins.gradle.org/m2/" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "net.ltgt.gradle:gradle-apt-plugin:0.10"
 	}
 }
-
-
 
 allprojects{
     apply plugin: 'groovy'
     apply plugin: 'java'
+//    apply plugin: 'idea'
+	apply plugin: "net.ltgt.apt"
 
     version = '0.0.1-SNAPSHOT'
 
