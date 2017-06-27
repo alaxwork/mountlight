@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/orders")
 public class OrderController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -26,8 +26,8 @@ public class OrderController {
     @Autowired
     private OrderMapper mapper;
 
-    @GetMapping("/orders/customer/{customer}")
-    List<OrderDto> findByCustomer(@PathVariable("customer") String customerId) {
+    @GetMapping("/customer/{customer}")
+    List<OrderDto> getCustomerOrders(@PathVariable("customer") String customerId) {
         logger.info("Geting orders by customer id {}", customerId);
         logger.info("{} test", "+3");
         List<Order> orders = repository.findByCustomerId(customerId);

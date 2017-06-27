@@ -23,7 +23,7 @@ buildscript {
 allprojects{
     apply plugin: 'groovy'
     apply plugin: 'java'
-//    apply plugin: 'idea'
+    apply plugin: 'idea'
 	apply plugin: "net.ltgt.apt"
 
     version = '0.0.1-SNAPSHOT'
@@ -46,6 +46,35 @@ allprojects{
         testCompile "org.spockframework:spock-core:${spockVersion}"
 		testCompile 'org.codehaus.groovy:groovy-all:2.4.11'
 	}
+
+	sourceSets {
+		itest {
+			compileClasspath += main.output + test.output
+			runtimeClasspath += main.output + test.output
+			java.srcDir file('src/itest/java')
+			resources.srcDir file('src/itest/resources')
+		}
+	}
+
+    configurations {
+        itestCompile.extendsFrom testCompile
+        itestRuntime.extendsFrom testRuntime
+    }
+
+    task itest(type: Test) {
+        testClassesDir = sourceSets.itest.output.classesDir
+        classpath = sourceSets.itest.runtimeClasspath
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+    }
+
+    idea {
+        module {
+            testSourceDirs += file('src/itest/java')
+            testSourceDirs += file('src/itest/resources')
+        }
+    }
 }
 
 subprojects {

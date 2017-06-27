@@ -1,4 +1,6 @@
 spring:
+  datasource:
+    url: jdbc:postgresql://ml-postgres:5432/docker
   zipkin:
     base-url: http://ml-zipkin:9411
 
